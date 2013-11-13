@@ -13,5 +13,16 @@
 		select * from jblog.tb_comment
 	</select>
 	
-
+	<insert id="addComment" parameterType="Comment">
+		insert into jblog.tb_comment values (null,#{comment},#{articleId},#{userId})
+	</insert>
+	
+	<select id="getCommentListByArticleId" parameterType="int" resultMap="CommentMap">
+		select * from jblog.tb_comment where article_id = #{articleId}
+	</select>
+	
+	<delete id="delCommentById" parameterType="int">
+		delete from jblog.tb_comment where comment_id = #{commentId}
+	</delete>
+	
 </mapper>

@@ -22,14 +22,12 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public Article getArticleById(int articleId) {
-		// TODO Auto-generated method stub
-		return null;
+		return articleMapper.getArticleById(articleId);
 	}
 
 	@Override
 	public boolean addArticle(Article article) {
-		// TODO Auto-generated method stub
-		return false;
+		return articleMapper.addArticle(article);
 	}
 
 }

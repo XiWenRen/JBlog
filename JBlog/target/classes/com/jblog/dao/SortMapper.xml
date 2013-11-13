@@ -6,6 +6,7 @@
 		<id column="sort_id" property="sortId" />
 		<result column="sort_name" property="sortName" jdbcType="VARCHAR" />
 		<result column="blog_id" property="blogId"/>
+		<collection property="articleList" column="sort_id" resultMap="com.jblog.dao.ArticleMapper.ArticleMap"/>
 	</resultMap>
 	
 	<select id="getSortList" resultMap="SortMap">

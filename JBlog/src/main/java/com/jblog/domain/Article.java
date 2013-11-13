@@ -8,7 +8,7 @@ public class Article {
 	private Integer articleId;
 	private String articleTitle;
 	private String articleContent;
-	private String userId;
+	private Integer userId;
 	private Date pubTime;
 	private Date modTime;
 	private Integer clickNum;
@@ -41,11 +41,11 @@ public class Article {
 		this.articleContent = articleContent;
 	}
 
-	public String getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 
@@ -107,7 +107,7 @@ public class Article {
 
 	@Override
 	public String toString() {
-		return "Article [articleId=" + articleId + ", articleTitle="
+		return "\nArticle [articleId=" + articleId + ", articleTitle="
 				+ articleTitle + ", articleContent=" + articleContent
 				+ ", userId=" + userId + ", pubTime=" + pubTime + ", modTime="
 				+ modTime + ", clickNum=" + clickNum + ", readNum=" + readNum

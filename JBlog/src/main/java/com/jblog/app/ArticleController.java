@@ -28,5 +28,4 @@ public class ArticleController {
 		logger.info(articleService.getArticleListByBlogId(blogId).toString());
 		return articleService.getArticleListByBlogId(blogId);
 	}
-
 }

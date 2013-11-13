@@ -5,7 +5,7 @@ public class Comment {
 	private Integer CommentId;
 	private String Comment;
 	private Integer articleId;
-	private String userId;
+	private Integer userId;
 
 	public Integer getCommentId() {
 		return CommentId;
@@ -31,11 +31,11 @@ public class Comment {
 		this.articleId = articleId;
 	}
 
-	public String getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
 
-	public void setUserId(String userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 

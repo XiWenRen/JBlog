@@ -20,15 +20,23 @@
 	</resultMap>
 
 	<select id="getArticleList" resultMap="ArticleMap">
-		select * from jblog.tb_article a left outer join jblog.tb_comment c on a.article_id = c.article_id
+		select * from
+		jblog.tb_article a left outer join jblog.tb_comment c on a.article_id
+		= c.article_id
 	</select>
 
-	<select id="getArticleListByBlogId" parameterType="int" resultMap="ArticleMap">
+	<select id="getArticleListByBlogId" parameterType="int"
+		resultMap="ArticleMap">
 		select * from jblog.tb_article where blog_id = #{blogId}
 	</select>
 	
+	<select id="getArticleListSepBySort" resultMap="com.jblog.dao.SortMapper.SortMap">
+		select * from (select * from tb_article limit 0,2) a left join tb_sort s on a.sort_id = s.sort_id;
+	</select>
+
 	<select id="getArticleById" parameterType="int" resultMap="ArticleMap">
-		select * from jblog.tb_article a left outer join jblog.tb_comment c on a.article_id = c.article_id where a.article_id = #{articleId}
+		select * from jblog.tb_article a left outer join jblog.tb_comment c on
+		a.article_id = c.article_id where a.article_id = #{articleId}
 	</select>
 
 	<insert id="addArticle" parameterType="Article">
@@ -36,6 +44,29 @@
 		jblog.tb_article values
 		(null,#{articleTitle},#{articleContent},#{userId},now(),now(),null,null,#{blogId},#{sortId})
 	</insert>
+
+	<delete id="deleteArticleById" parameterType="int">
+		delete from
+		jblog.tb_article where article_id = #{articleId}
+	</delete>
+
+	<update id="updateArticle" parameterType="Article">
+		update jblog.tb_article
+		<set>
+			<if test="articleTitle != null">
+				article_title = #{articleTitle},
+			</if>
+			<if test="articleContent != null">
+				article_content = #{articleContent},
+			</if>
+			<if test="sortId != null">
+				sort_id = #{sortId},
+			</if>
+				mod_time = now()
+				where article_id = #{articleId}
+		</set>
+
+	</update>
 
 
 </mapper>

@@ -2,13 +2,13 @@ package com.jblog.domain;
 
 public class User {
 	
-	private String userId;
+	private Integer userId;
 	private String userName;
 	private String userPass;
-	public String getUserId() {
+	public Integer getUserId() {
 		return userId;
 	}
-	public void setUserId(String userId) {
+	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {

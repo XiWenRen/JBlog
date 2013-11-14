@@ -30,8 +30,8 @@
 		select * from jblog.tb_article where blog_id = #{blogId}
 	</select>
 	
-	<select id="getArticleListSepBySort" resultMap="com.jblog.dao.SortMapper.SortMap">
-		select * from (select * from tb_article limit 0,2) a left join tb_sort s on a.sort_id = s.sort_id;
+	<select id="getArticleListSepBySort" parameterType="int" resultMap="com.jblog.dao.SortMapper.SortMap">
+		select * from tb_article a left join tb_sort s on a.sort_id = s.sort_id where s.blog_id = #{blogId};
 	</select>
 
 	<select id="getArticleById" parameterType="int" resultMap="ArticleMap">

@@ -17,7 +17,10 @@
 		<div id="body">
 			<div id="body_nav">
 				<nav id="nav">
-					<a href="#article_block6">test link</a>
+					<a href="#" class="menu">默认分类</a>
+					<ul class="menu_lis">
+						<li><a href="#article_block0">test link1</a></li>
+					</ul>
 				</nav>
 			</div>
 			<div id="body_articles">
@@ -53,7 +56,7 @@
 					</article>
 					<div class="article_comments bcolor"></div>
 					<div class="btn_bar">
-						<canvas class="btn toleft">浏览器不支持1</canvas>
+						<canvas class="btn toleft" title="查看回复">浏览器不支持1</canvas>
 						<canvas class="btn todown">浏览器不支持2</canvas>
 					</div>
 				</article>

@@ -3,12 +3,27 @@
 *{
 	margin: 0px;
 	padding: 0px;
+	color: white;
+	font-size: 16px;
+	line-height: 150%;
+}
+
+ul{
+	list-style-type : none;
+}
+
+a{
+	font:18px "微软雅黑";
+	text-decoration:none;
+}
+
+a:HOVER{
+	color: rgb(24,54,67);
 }
 
 body {
 	width: 100%;
 	height: 1000px;
-	font-size: 20px;
 	color: #FFFFFF;
 	background-repeat: no-repeat;
 }
@@ -22,6 +37,7 @@ body {
 	width: 100%;
 	margin-top: -85px;
 	position: fixed;
+	z-index: 100;
 }
 
 #color_panel{
@@ -72,10 +88,42 @@ body {
 	width: 300px;
 	float: left;
 	position: fixed;
+	margin-left: 10px;
+}
+
+#nav {
+	width: 250px;
+	min-height: 400px;
+	height:auto !important;
+	background-color: rgb(123,123,123);
+}
+
+.menu {
+	display: block;
+	height: 20px;
+}
+
+.menu:HOVER {
+	background-color: white;
+}
+
+.menu_lis,.menu_lis a {
+	width: 100%;
+}
+
+.menu_lis a{
+	display: block;
+	margin: 2px 0 0 15px;
+	font-size: 16px;
+}
+
+.menu_lis a:HOVER {
+	background-color: white;
 }
 
 #body_articles {
 	width: 7000px;
+	margin-left: 300px;
 }
 
 .article_date {

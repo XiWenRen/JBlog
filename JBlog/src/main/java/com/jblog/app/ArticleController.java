@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jblog.domain.Article;
+import com.jblog.domain.Sort;
 import com.jblog.service.ArticleService;
 
 @Controller
@@ -27,5 +28,11 @@ public class ArticleController {
 		logger.info("=========");
 		logger.info(articleService.getArticleListByBlogId(blogId).toString());
 		return articleService.getArticleListByBlogId(blogId);
+	}
+	
+	@RequestMapping("/sortArticles")
+	@ResponseBody
+	public List<Sort> getArticleListSepBySort(int blogId){
+		return articleService.getArticleListSepBySort(blogId);
 	}
 }

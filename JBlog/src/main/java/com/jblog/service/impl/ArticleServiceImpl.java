@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.jblog.dao.ArticleMapper;
 import com.jblog.domain.Article;
+import com.jblog.domain.Sort;
 import com.jblog.service.ArticleService;
 
 @Service
@@ -28,6 +29,11 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public boolean addArticle(Article article) {
 		return articleMapper.addArticle(article);
+	}
+
+	@Override
+	public List<Sort> getArticleListSepBySort(int blogId) {
+		return articleMapper.getArticleListSepBySort(blogId);
 	}
 
 }

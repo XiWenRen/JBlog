@@ -17,7 +17,7 @@ public interface ArticleMapper {
 	Article getArticleById(int articleId);
 	
 	//按文章分类获取文章列表
-	List<Sort> getArticleListSepBySort();
+	List<Sort> getArticleListSepBySort(int blogId);
 	
 	//添加文章
 	boolean addArticle(Article article);

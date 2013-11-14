@@ -34,7 +34,7 @@ public class ArticleMapperTest extends MapperTest{
 	
 	@Test
 	public void testGetArticleListSepBySort(){
-		List<Sort> sortList = articleMapper.getArticleListSepBySort();
+		List<Sort> sortList = articleMapper.getArticleListSepBySort(1);
 		for(Sort sort : sortList){
 			logger.info("-" + sort.getSortName());
 			logger.info(" --" + sort.toString());
